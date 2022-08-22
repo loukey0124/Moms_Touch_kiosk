@@ -73,7 +73,6 @@ namespace DB
                             table["Image"].ToString()!, table["Type"].ToString()!, Convert.ToInt32(table["IsSoldout"]), Convert.ToInt32(table["DataNumber"]));
                         i++;
                     }
-                    menu = menu.OrderBy(ob => ob.dataNum).ToArray();
                 }
                 catch
                 {

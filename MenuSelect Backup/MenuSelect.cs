@@ -6,8 +6,6 @@ namespace MENUSELECT
     {
         public static bool ispay = false;
         private string soldOutImage = "ImageDB\\Setting\\soldout.png";
-        private PictureBox? picBox;
-        private Label? label;
 
         public MenuSelect_Form()
         {
@@ -19,53 +17,33 @@ namespace MENUSELECT
         {
             orderView.Items.Clear();
 
-            MENU.Menu[] buger = DB.DataBase.GetMenuByType("buger");
-            buger = buger.OrderByDescending(ob => ob.dataNum).ToArray();
+            PictureBox[] PB_imageBuger = new PictureBox[] { Image_buger1, Image_buger2, Image_buger3, Image_buger4, Image_buger5, Image_buger6, Image_buger7
+            , Image_buger8, Image_buger9,Image_buger10,Image_buger11,Image_buger12,Image_buger13,Image_buger14,Image_buger15,Image_buger16,Image_buger17
+            ,Image_buger18,Image_buger19,Image_buger20,Image_buger21,Image_buger22,Image_buger23,Image_buger24};
+            Label[] LB_nameBuger = new Label[] { Label_buger1, Label_buger2, Label_buger3, Label_buger4, Label_buger5, Label_buger6, Label_buger7
+            ,Label_buger8, Label_buger9, Label_buger10,Label_buger11,Label_buger12,Label_buger13,Label_buger14,Label_buger15,Label_buger16,Label_buger17
+            ,Label_buger18,Label_buger19,Label_buger20,Label_buger21,Label_buger22,Label_buger23,Label_buger24};
+            Label[] LB_priceBuger = new Label[] { Label_bugerPrice1, Label_bugerPrice2, Label_bugerPrice3, Label_bugerPrice4, Label_bugerPrice5,
+            Label_bugerPrice6, Label_bugerPrice7,Label_bugerPrice8,Label_bugerPrice9,Label_bugerPrice10,Label_bugerPrice11,Label_bugerPrice12,
+            Label_bugerPrice13,Label_bugerPrice14,Label_bugerPrice15,Label_bugerPrice16,Label_bugerPrice17,Label_bugerPrice18,Label_bugerPrice19,
+            Label_bugerPrice20,Label_bugerPrice21,Label_bugerPrice22,Label_bugerPrice23,Label_bugerPrice24};
 
-            for (int i = 0; i < buger.Length; i++)
+            for (int i = 0; i < 24; i++)
             {
-                picBox = new PictureBox();
-                if (buger[i].isSoldout == 1)
+                MENU.Menu menuBuger = DB.DataBase.GetMenuByName("buger" + (i + 1).ToString());
+                if (menuBuger.isSoldout == 1)
                 {
-                    picBox.Load(soldOutImage);
-                    picBox.Tag = true;
+                    PB_imageBuger[i].Load(soldOutImage);
+                    PB_imageBuger[i].Tag = true;
                 }
                 else
                 {
-                    picBox.Load(buger[i].image);
-                    picBox.Tag = false;
+                    PB_imageBuger[i].Load(menuBuger.image);
+                    PB_imageBuger[i].Tag = false;
                 }
-                picBox.Size = new Size(90, 90);
-                Tab_Buger.Controls.Add(picBox);
+                LB_nameBuger[i].Text = menuBuger.name;
+                LB_priceBuger[i].Text = $"\\ {menuBuger.price.ToString()}";
             }
-
-            //PictureBox[] PB_imageBuger = new PictureBox[] { Image_buger1, Image_buger2, Image_buger3, Image_buger4, Image_buger5, Image_buger6, Image_buger7
-            //, Image_buger8, Image_buger9,Image_buger10,Image_buger11,Image_buger12,Image_buger13,Image_buger14,Image_buger15,Image_buger16,Image_buger17
-            //,Image_buger18,Image_buger19,Image_buger20,Image_buger21,Image_buger22,Image_buger23,Image_buger24};
-            //Label[] LB_nameBuger = new Label[] { Label_buger1, Label_buger2, Label_buger3, Label_buger4, Label_buger5, Label_buger6, Label_buger7
-            //,Label_buger8, Label_buger9, Label_buger10,Label_buger11,Label_buger12,Label_buger13,Label_buger14,Label_buger15,Label_buger16,Label_buger17
-            //,Label_buger18,Label_buger19,Label_buger20,Label_buger21,Label_buger22,Label_buger23,Label_buger24};
-            //Label[] LB_priceBuger = new Label[] { Label_bugerPrice1, Label_bugerPrice2, Label_bugerPrice3, Label_bugerPrice4, Label_bugerPrice5,
-            //Label_bugerPrice6, Label_bugerPrice7,Label_bugerPrice8,Label_bugerPrice9,Label_bugerPrice10,Label_bugerPrice11,Label_bugerPrice12,
-            //Label_bugerPrice13,Label_bugerPrice14,Label_bugerPrice15,Label_bugerPrice16,Label_bugerPrice17,Label_bugerPrice18,Label_bugerPrice19,
-            //Label_bugerPrice20,Label_bugerPrice21,Label_bugerPrice22,Label_bugerPrice23,Label_bugerPrice24};
-
-            //for (int i = 0; i < 24; i++)
-            //{
-            //    MENU.Menu menuBuger = DB.DataBase.GetMenuByName("buger" + (i + 1).ToString());
-            //    if (menuBuger.isSoldout == 1)
-            //    {
-            //        PB_imageBuger[i].Load(soldOutImage);
-            //        PB_imageBuger[i].Tag = true;
-            //    }
-            //    else
-            //    {
-            //        PB_imageBuger[i].Load(menuBuger.image);
-            //        PB_imageBuger[i].Tag = false;
-            //    }
-            //    LB_nameBuger[i].Text = menuBuger.name;
-            //    LB_priceBuger[i].Text = $"\\ {menuBuger.price.ToString()}";
-            //}
 
             PictureBox[] PB_imageChicken = new PictureBox[] { Image_chicken1, Image_chicken2, Image_chicken3, Image_chicken4, Image_chicken5, Image_chicken6
             , Image_chicken7, Image_chicken8,Image_chicken9,Image_chicken10,Image_chicken11,Image_chicken12,Image_chicken13,Image_chicken14,Image_chicken15

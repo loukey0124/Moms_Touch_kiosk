@@ -2,8 +2,8 @@ namespace SideMenu_Pick
 {
     public partial class SidePick : Form
     {
-        PictureBox? picbox;
-        Label? label;
+        private PictureBox? picbox;
+        private Label? label;
         MENUSELECT.MenuSelect_Form frm1;
 
         public string ordermenu = "";
@@ -40,6 +40,8 @@ namespace SideMenu_Pick
             checkimage2.Load("ImageDB\\Setting\\check.png");
 
             MENU.Menu[] sidemenu = DB.DataBase.GetMenuByType("pickside");
+            sidemenu = sidemenu.OrderBy(ob => ob.dataNum).ToArray();
+
             for (int i = 0; i < 4; i++)
             {
                 picbox = new PictureBox();
@@ -69,6 +71,8 @@ namespace SideMenu_Pick
             }
 
             MENU.Menu[] drinkmenu = DB.DataBase.GetMenuByType("pickdrink");
+            drinkmenu = drinkmenu.OrderBy(ob => ob.dataNum).ToArray();
+
             for (int i = 0; i < 5; i++)
             {
                 picbox = new PictureBox();
