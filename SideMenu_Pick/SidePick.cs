@@ -39,7 +39,7 @@ namespace SideMenu_Pick
             checkimage1.Load("ImageDB\\Setting\\check.png");
             checkimage2.Load("ImageDB\\Setting\\check.png");
 
-            MENU.Menu[] sidemenu = DB.DataBase.GetPickSide();
+            MENU.Menu[] sidemenu = DB.DataBase.GetMenuByType("pickside");
             for (int i = 0; i < 4; i++)
             {
                 picbox = new PictureBox();
@@ -68,7 +68,7 @@ namespace SideMenu_Pick
                 sidePriceLayout.Controls.Add(label);
             }
 
-            MENU.Menu[] drinkmenu = DB.DataBase.GetPickDrink();
+            MENU.Menu[] drinkmenu = DB.DataBase.GetMenuByType("pickdrink");
             for (int i = 0; i < 5; i++)
             {
                 picbox = new PictureBox();

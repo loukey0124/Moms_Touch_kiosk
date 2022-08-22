@@ -100,7 +100,7 @@
             // menu
             // 
             this.menu.Text = "상품명";
-            this.menu.Width = 275;
+            this.menu.Width = 265;
             // 
             // count
             // 
@@ -126,11 +126,12 @@
             // totaltxt
             // 
             this.totaltxt.AutoSize = true;
-            this.totaltxt.Location = new System.Drawing.Point(333, 269);
+            this.totaltxt.Location = new System.Drawing.Point(311, 269);
             this.totaltxt.Name = "totaltxt";
             this.totaltxt.Size = new System.Drawing.Size(14, 15);
             this.totaltxt.TabIndex = 6;
             this.totaltxt.Text = "0";
+            this.totaltxt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // barcodebox
             // 

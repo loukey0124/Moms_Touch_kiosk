@@ -106,7 +106,7 @@
             // menu
             // 
             this.menu.Text = "메뉴";
-            this.menu.Width = 380;
+            this.menu.Width = 365;
             // 
             // count
             // 
@@ -185,7 +185,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(455, 379);
+            this.label7.Location = new System.Drawing.Point(446, 379);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 17);
             this.label7.TabIndex = 10;
@@ -207,7 +207,7 @@
             this.orderprice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.orderprice.AutoSize = true;
             this.orderprice.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.orderprice.Location = new System.Drawing.Point(521, 379);
+            this.orderprice.Location = new System.Drawing.Point(512, 379);
             this.orderprice.Name = "orderprice";
             this.orderprice.Size = new System.Drawing.Size(40, 17);
             this.orderprice.TabIndex = 12;
