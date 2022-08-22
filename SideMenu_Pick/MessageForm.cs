@@ -20,7 +20,7 @@
                 receiptlist.Items.Add((ListViewItem)item.Clone());
             }
             totaltxt.Text = String.Format($"{messageform.receiptprice,0:N0}원");
-            barcodebox.Load("ImageDB\\barcode.jpg");
+            barcodebox.Load("ImageDB\\Setting\\barcode.jpg");
 
             string takeout = "매장";
             if (START.Start.takeOut == true)

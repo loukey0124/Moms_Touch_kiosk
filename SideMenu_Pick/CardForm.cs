@@ -35,7 +35,7 @@
                 counttimer.Enabled = false;
 
                 Point parentPoint = this.Location;
-                SideMenu_Pick.MessageForm messageform = new SideMenu_Pick.MessageForm(this);
+                Message.MessageForm messageform = new Message.MessageForm(this);
                 messageform.StartPosition = FormStartPosition.Manual;
                 messageform.Location = new Point(parentPoint.X + 50, parentPoint.Y + 50);
                 messageform.ShowDialog();

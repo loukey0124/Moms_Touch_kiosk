@@ -23,7 +23,7 @@ namespace DB
                     MySqlDataReader table = cmd.ExecuteReader();
 
                     table.Read();
-                    MENU.Menu menu = new MENU.Menu(table["Name_kor"].ToString()!, Convert.ToInt32(table["Price"])!, table["Image"].ToString()!, table["Type"].ToString()!);
+                    MENU.Menu menu = new MENU.Menu(table["Name_kor"].ToString()!, Convert.ToInt32(table["Price"])!, table["Image"].ToString()!, table["Type"].ToString()!, Convert.ToInt32(table["IsSoldout"]));
                     return menu;
                 }
                 catch (Exception)
@@ -44,7 +44,7 @@ namespace DB
                 try
                 {
                     connection.Open();
-                    string sqlcmd = string.Format($"SELECT * FROM menu where Type = 'pickside'");
+                    string sqlcmd = string.Format("SELECT * FROM menu where Type = 'pickside'");
                     MySqlCommand cmd = new MySqlCommand(sqlcmd, connection);
                     MySqlDataReader table = cmd.ExecuteReader();
 
@@ -74,7 +74,7 @@ namespace DB
                 try
                 {
                     connection.Open();
-                    string sqlcmd = string.Format($"SELECT * FROM menu where Type = 'pickdrink'");
+                    string sqlcmd = string.Format("SELECT * FROM menu where Type = 'pickdrink'");
                     MySqlCommand cmd = new MySqlCommand(sqlcmd, connection);
                     MySqlDataReader table = cmd.ExecuteReader();
 
@@ -91,6 +91,74 @@ namespace DB
                     MessageBox.Show("DB ERROR!!");
                 }
                 return menu;
+            }
+        }
+
+        public static MENU.Menu[] GetMenuByType(string type)
+        {
+            int menuCount = 0;
+
+            using(MySqlConnection connection = new MySqlConnection(connect))
+            {
+                try
+                {
+                    connection.Open();
+                    string sqlcmd = string.Format($"SELECT COUNT(*) FROM menu WHERE Type = '{type}'");
+                    MySqlCommand cmd = new MySqlCommand(sqlcmd, connection);
+                    MySqlDataReader table = cmd.ExecuteReader();
+                    table.Read();
+                    menuCount = Convert.ToInt32(table["COUNT(*)"]);
+                }
+                catch
+                {
+                    MessageBox.Show("DB ERROR!!");
+                }
+            }
+            MENU.Menu[] menu = new MENU.Menu[menuCount];
+
+            using (MySqlConnection connection = new MySqlConnection(connect))
+            {
+                try
+                {
+                    connection.Open();
+                    string sqlcmd = string.Format($"SELECT * FROM menu WHERE Type = '{type}'");
+                    MySqlCommand cmd = new MySqlCommand(sqlcmd, connection);
+                    MySqlDataReader table = cmd.ExecuteReader();
+
+                    int i = 0;
+                    while (table.Read())
+                    {
+                        menu[i] = new MENU.Menu(table["Name_kor"].ToString()!, Convert.ToInt32(table["Price"])!, table["Image"].ToString()!, table["Type"].ToString()!, Convert.ToInt32(table["IsSoldout"]));
+                        i++;
+                    }
+                    menu = menu.OrderBy(ob => ob.price).ToArray();
+                }
+                catch
+                {
+                    MessageBox.Show("DB ERROR!!");
+                }
+            }
+            return menu;
+        }
+
+        public static void UpdateDB(MENU.Menu[] menu)
+        {
+            using (MySqlConnection connection = new MySqlConnection(connect))
+            {
+                try
+                {
+                    connection.Open();
+                    for (int i = 0; i < menu.Length; i++)
+                    {
+                        string sqlcmd = string.Format($"UPDATE menu SET isSoldout = {menu[i].isSoldout} WHERE Name_kor = '{menu[i].name}'");
+                        MySqlCommand cmd = new MySqlCommand(sqlcmd, connection);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("DB ERROR!!");
+                }
             }
         }
     }

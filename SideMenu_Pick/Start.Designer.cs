@@ -87,7 +87,7 @@
             this.Controls.Add(this.btn_Mart);
             this.Controls.Add(this.btn_Pack);
             this.Controls.Add(this.eventImage);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Start";
             this.Text = "Mom\'s Touch";

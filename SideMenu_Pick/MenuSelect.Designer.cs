@@ -4582,6 +4582,7 @@
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.momsLogoImage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MenuSelect_Form";
             this.Text = "Mom\'s Touch";

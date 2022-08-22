@@ -165,6 +165,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MessageForm";
             this.Text = "영수증";
             this.Load += new System.EventHandler(this.MessageForm_Load);

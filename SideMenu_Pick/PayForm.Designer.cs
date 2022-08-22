@@ -182,6 +182,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(455, 379);
@@ -203,6 +204,7 @@
             // 
             // orderprice
             // 
+            this.orderprice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.orderprice.AutoSize = true;
             this.orderprice.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.orderprice.Location = new System.Drawing.Point(521, 379);
@@ -210,14 +212,15 @@
             this.orderprice.Size = new System.Drawing.Size(40, 17);
             this.orderprice.TabIndex = 12;
             this.orderprice.Text = "5000";
-            this.orderprice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.orderprice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pavingbtn
             // 
+            this.pavingbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pavingbtn.BackColor = System.Drawing.Color.White;
             this.pavingbtn.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.pavingbtn.ForeColor = System.Drawing.Color.LightPink;
-            this.pavingbtn.Location = new System.Drawing.Point(128, 407);
+            this.pavingbtn.Location = new System.Drawing.Point(128, 420);
             this.pavingbtn.Name = "pavingbtn";
             this.pavingbtn.Size = new System.Drawing.Size(150, 49);
             this.pavingbtn.TabIndex = 13;
@@ -227,9 +230,10 @@
             // 
             // burialbtn
             // 
+            this.burialbtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.burialbtn.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.burialbtn.ForeColor = System.Drawing.Color.LightPink;
-            this.burialbtn.Location = new System.Drawing.Point(304, 407);
+            this.burialbtn.Location = new System.Drawing.Point(304, 420);
             this.burialbtn.Name = "burialbtn";
             this.burialbtn.Size = new System.Drawing.Size(150, 49);
             this.burialbtn.TabIndex = 14;
@@ -239,9 +243,10 @@
             // 
             // cancel
             // 
+            this.cancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cancel.BackColor = System.Drawing.Color.Pink;
             this.cancel.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cancel.Location = new System.Drawing.Point(165, 488);
+            this.cancel.Location = new System.Drawing.Point(165, 501);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(113, 61);
             this.cancel.TabIndex = 15;
@@ -251,9 +256,10 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.BackColor = System.Drawing.Color.Pink;
             this.button2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(304, 488);
+            this.button2.Location = new System.Drawing.Point(304, 501);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 61);
             this.button2.TabIndex = 16;
@@ -265,8 +271,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(584, 561);
+            this.ClientSize = new System.Drawing.Size(584, 586);
+            this.ControlBox = false;
             this.Controls.Add(this.button2);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.burialbtn);
@@ -284,6 +292,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "PayForm";
             this.Text = "Mom\'s Touch";
             this.Load += new System.EventHandler(this.PayForm_Load);

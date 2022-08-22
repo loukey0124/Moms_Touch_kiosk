@@ -5,6 +5,7 @@ namespace MENUSELECT
     public partial class MenuSelect_Form : Form
     {
         public static bool ispay = false;
+        private string soldOutImage = "ImageDB\\Setting\\soldout.png";
 
         public MenuSelect_Form()
         {
@@ -30,7 +31,16 @@ namespace MENUSELECT
             for (int i = 0; i < 24; i++)
             {
                 MENU.Menu menuBuger = DB.DataBase.GetMenuByName("buger" + (i + 1).ToString());
-                PB_imageBuger[i].Load(menuBuger.image);
+                if (menuBuger.isSoldout == 1)
+                {
+                    PB_imageBuger[i].Load(soldOutImage);
+                    PB_imageBuger[i].Tag = true;
+                }
+                else
+                {
+                    PB_imageBuger[i].Load(menuBuger.image);
+                    PB_imageBuger[i].Tag = false;
+                }
                 LB_nameBuger[i].Text = menuBuger.name;
                 LB_priceBuger[i].Text = $"\\ {menuBuger.price.ToString()}";
             }
@@ -49,7 +59,16 @@ namespace MENUSELECT
             for (int i = 0; i < 21; i++)
             {
                 MENU.Menu menuChicken = DB.DataBase.GetMenuByName("Chicken" + (i + 1).ToString());
-                PB_imageChicken[i].Load(menuChicken.image);
+                if (menuChicken.isSoldout == 1)
+                {
+                    PB_imageChicken[i].Load(soldOutImage);
+                    PB_imageChicken[i].Tag = true;
+                }
+                else
+                {
+                    PB_imageChicken[i].Load(menuChicken.image);
+                    PB_imageChicken[i].Tag = false;
+                }
                 LB_nameChicken[i].Text = menuChicken.name;
                 LB_priceChicken[i].Text = $"\\ {menuChicken.price.ToString()}";
             }
@@ -69,7 +88,16 @@ namespace MENUSELECT
             for (int i = 0; i < 31; i++)
             {
                 MENU.Menu menuSet = DB.DataBase.GetMenuByName("setmenu" + (i + 1).ToString());
-                PB_imageSet[i].Load(menuSet.image);
+                if (menuSet.isSoldout == 1)
+                {
+                    PB_imageSet[i].Load(soldOutImage);
+                    PB_imageSet[i].Tag = true;
+                }
+                else
+                {
+                    PB_imageSet[i].Load(menuSet.image);
+                    PB_imageSet[i].Tag = false;
+                }
                 LB_nameSet[i].Text = menuSet.name;
                 LB_priceSet[i].Text = $"\\ {menuSet.price.ToString()}";
             }
@@ -88,7 +116,16 @@ namespace MENUSELECT
             for (int i = 0; i < 23; i++)
             {
                 MENU.Menu menuSide = DB.DataBase.GetMenuByName("side" + (i + 1).ToString());
-                PB_imageSide[i].Load(menuSide.image);
+                if (menuSide.isSoldout == 1)
+                {
+                    PB_imageSide[i].Load(soldOutImage);
+                    PB_imageSide[i].Tag = true;
+                }
+                else
+                {
+                    PB_imageSide[i].Load(menuSide.image);
+                    PB_imageSide[i].Tag = false;
+                }
                 LB_nameSide[i].Text = menuSide.name;
                 LB_priceSide[i].Text = $"\\ {menuSide.price.ToString()}";
             }
@@ -103,7 +140,16 @@ namespace MENUSELECT
             for (int i = 0; i < 9; i++)
             {
                 MENU.Menu menuDrink = DB.DataBase.GetMenuByName("drink" + (i + 1).ToString());
-                PB_imageDrink[i].Load(menuDrink.image);
+                if (menuDrink.isSoldout == 1)
+                {
+                    PB_imageDrink[i].Load(soldOutImage);
+                    PB_imageDrink[i].Tag = true;
+                }
+                else
+                {
+                    PB_imageDrink[i].Load(menuDrink.image);
+                    PB_imageDrink[i].Tag = false;
+                }
                 LB_nameDrink[i].Text = menuDrink.name;
                 LB_priceDrink[i].Text = $"\\ {menuDrink.price.ToString()}";
             }
@@ -111,231 +157,237 @@ namespace MENUSELECT
 
         private void Image_buger1_Click(object sender, EventArgs e)
         {
-            SetListviewData("간장마늘싸이버거", 4400);
+            SetListviewData(sender, "간장마늘싸이버거", 4400);
         }
 
         private void Image_buger2_Click(object sender, EventArgs e)
         {
-            SetListviewData("갈릭바베큐치킨버거", 5600);
+            SetListviewData(sender, "갈릭바베큐치킨버거", 5600);
         }
 
         private void Image_buger3_Click(object sender, EventArgs e)
         {
-            SetListviewData("딥치즈버거", 4500);
+            SetListviewData(sender, "딥치즈버거", 4500);
         }
 
         private void Image_buger4_Click(object sender, EventArgs e)
         {
-            SetListviewData("딥치즈싸이버거", 4800);
+            SetListviewData(sender, "딥치즈싸이버거", 4800);
         }
 
         private void Image_buger5_Click(object sender, EventArgs e)
         {
-            SetListviewData("불고기버거", 3500);
+            SetListviewData(sender, "불고기버거", 3500);
         }
 
         private void Image_buger6_Click(object sender, EventArgs e)
         {
-            SetListviewData("불싸이버거", 4400);
+            SetListviewData(sender, "불싸이버거", 4400);
         }
 
         private void Image_buger7_Click(object sender, EventArgs e)
         {
-            SetListviewData("새우불고기버거", 5100);
+            SetListviewData(sender, "새우불고기버거", 5100);
         }
 
         private void Image_buger8_Click(object sender, EventArgs e)
         {
-            SetListviewData("쉬립프싸이플렉스버거", 6500);
+            SetListviewData(sender, "쉬립프싸이플렉스버거", 6500);
         }
 
         private void Image_buger9_Click(object sender, EventArgs e)
         {
-            SetListviewData("싸이버거", 4300);
+            SetListviewData(sender, "싸이버거", 4300);
         }
 
         private void Image_buger10_Click(object sender, EventArgs e)
         {
-            SetListviewData("싸이플렉스버거", 7200);
+            SetListviewData(sender, "싸이플렉스버거", 7200);
         }
 
         private void Image_buger11_Click(object sender, EventArgs e)
         {
-            SetListviewData("양념치킨싸이버거", 4400);
+            SetListviewData(sender, "양념치킨싸이버거", 4400);
         }
 
         private void Image_buger12_Click(object sender, EventArgs e)
         {
-            SetListviewData("어메이징매콤마요버거", 5600);
+            SetListviewData(sender, "어메이징매콤마요버거", 5600);
         }
 
         private void Image_buger13_Click(object sender, EventArgs e)
         {
-            SetListviewData("언빌리버블버거", 5600);
+            SetListviewData(sender, "언빌리버블버거", 5600);
         }
 
         private void Image_buger14_Click(object sender, EventArgs e)
         {
-            SetListviewData("에그불고기버거", 4300);
+            SetListviewData(sender, "에그불고기버거", 4300);
         }
 
         private void Image_buger15_Click(object sender, EventArgs e)
         {
-            SetListviewData("인크레더블버거", 5400);
+            SetListviewData(sender, "인크레더블버거", 5400);
         }
 
         private void Image_buger16_Click(object sender, EventArgs e)
         {
-            SetListviewData("치즈홀릭버거(에멘탈)", 5600);
+            SetListviewData(sender, "치즈홀릭버거(에멘탈)", 5600);
         }
 
         private void Image_buger17_Click(object sender, EventArgs e)
         {
-            SetListviewData("치즈홀릭버거(체다)", 5600);
+            SetListviewData(sender, "치즈홀릭버거(체다)", 5600);
         }
 
         private void Image_buger18_Click(object sender, EventArgs e)
         {
-            SetListviewData("텍사스바베큐치킨버거", 5800);
+            SetListviewData(sender, "텍사스바베큐치킨버거", 5800);
         }
 
         private void Image_buger19_Click(object sender, EventArgs e)
         {
-            SetListviewData("트리플딥치즈싸이버거", 5100);
+            SetListviewData(sender, "트리플딥치즈싸이버거", 5100);
         }
 
         private void Image_buger20_Click(object sender, EventArgs e)
         {
-            SetListviewData("할라피뇨통살버거", 4400);
+            SetListviewData(sender, "할라피뇨통살버거", 4400);
         }
 
         private void Image_buger21_Click(object sender, EventArgs e)
         {
-            SetListviewData("햄치즈휠렛버거", 4600);
+            SetListviewData(sender, "햄치즈휠렛버거", 4600);
         }
 
         private void Image_buger22_Click(object sender, EventArgs e)
         {
-            SetListviewData("화이트갈릭버거", 4600);
+            SetListviewData(sender, "화이트갈릭버거", 4600);
         }
 
         private void Image_buger23_Click(object sender, EventArgs e)
         {
-            SetListviewData("화이트갈릭싸이버거", 4900);
+            SetListviewData(sender, "화이트갈릭싸이버거", 4900);
         }
 
         private void Image_buger24_Click(object sender, EventArgs e)
         {
-            SetListviewData("휠렛버거", 4100);
+            SetListviewData(sender, "휠렛버거", 4100);
         }
 
         private void Image_chicken1_Click(object sender, EventArgs e)
         {
-            SetListviewData("간장마늘떡강정", 12000);
+            SetListviewData(sender, "간장마늘떡강정", 12000);
         }
 
         private void Image_chicken2_Click(object sender, EventArgs e)
         {
-            SetListviewData("간장마늘싸이순살", 12900);
+            SetListviewData(sender, "간장마늘싸이순살", 12900);
         }
 
         private void Image_chicken3_Click(object sender, EventArgs e)
         {
-            SetListviewData("간장마늘치킨", 18900);
+            SetListviewData(sender, "간장마늘치킨", 18900);
         }
 
         private void Image_chicken4_Click(object sender, EventArgs e)
         {
-            SetListviewData("군옥수수뿌치", 18900);
+            SetListviewData(sender, "군옥수수뿌치", 18900);
         }
 
         private void Image_chicken5_Click(object sender, EventArgs e)
         {
-            SetListviewData("군옥수수뿌치싸이순살", 12900);
+            SetListviewData(sender, "군옥수수뿌치싸이순살", 12900);
         }
 
         private void Image_chicken6_Click(object sender, EventArgs e)
         {
-            SetListviewData("맘스양념싸이순살", 12900);
+            SetListviewData(sender, "맘스양념싸이순살", 12900);
         }
 
         private void Image_chicken7_Click(object sender, EventArgs e)
         {
-            SetListviewData("맘스양념치킨", 18900);
+            SetListviewData(sender, "맘스양념치킨", 18900);
         }
 
         private void Image_chicken8_Click(object sender, EventArgs e)
         {
-            SetListviewData("반반치킨", 17900);
+            SetListviewData(sender, "반반치킨", 17900);
         }
 
         private void Image_chicken9_Click(object sender, EventArgs e)
         {
-            SetListviewData("치즈뿌치(체다)", 18900);
+            SetListviewData(sender, "치즈뿌치(체다)", 18900);
         }
 
         private void Image_chicken10_Click(object sender, EventArgs e)
         {
-            SetListviewData("치즈뿌치싸이순살(체다)", 12900);
+            SetListviewData(sender, "치즈뿌치싸이순살(체다)", 12900);
         }
 
         private void Image_chicken11_Click(object sender, EventArgs e)
         {
-            SetListviewData("치즈뿌치텐더", 9500);
+            SetListviewData(sender, "치즈뿌치텐더", 9500);
         }
 
         private void Image_chicken12_Click(object sender, EventArgs e)
         {
-            SetListviewData("치파오떡강정", 12000);
+            SetListviewData(sender, "치파오떡강정", 12000);
         }
 
         private void Image_chicken13_Click(object sender, EventArgs e)
         {
-            SetListviewData("치파오싸이순살", 12900);
+            SetListviewData(sender, "치파오싸이순살", 12900);
         }
 
         private void Image_chicken14_Click(object sender, EventArgs e)
         {
-            SetListviewData("케이준떡강정", 11500);
+            SetListviewData(sender, "케이준떡강정", 11500);
         }
 
         private void Image_chicken15_Click(object sender, EventArgs e)
         {
-            SetListviewData("핫치즈싸이순살", 13500);
+            SetListviewData(sender, "핫치즈싸이순살", 13500);
         }
 
         private void Image_chicken16_Click(object sender, EventArgs e)
         {
-            SetListviewData("허니버터뿌치", 18900);
+            SetListviewData(sender, "허니버터뿌치", 18900);
         }
 
         private void Image_chicken17_Click(object sender, EventArgs e)
         {
-            SetListviewData("허니뿌치싸이순살", 12900);
+            SetListviewData(sender, "허니뿌치싸이순살", 12900);
         }
 
         private void Image_chicken18_Click(object sender, EventArgs e)
         {
-            SetListviewData("후라이드싸이순살", 10900);
+            SetListviewData(sender, "후라이드싸이순살", 10900);
         }
 
         private void Image_chicken19_Click(object sender, EventArgs e)
         {
-            SetListviewData("후라이드치킨", 16900);
+            SetListviewData(sender, "후라이드치킨", 16900);
         }
 
         private void Image_chicken20_Click(object sender, EventArgs e)
         {
-            SetListviewData("후라이드텐더", 7500);
+            SetListviewData(sender, "후라이드텐더", 7500);
         }
 
         private void Image_chicken21_Click(object sender, EventArgs e)
         {
-            SetListviewData("후라이드통다리(1조각)", 4500);
+            SetListviewData(sender, "후라이드통다리(1조각)", 4500);
         }
 
         private void Image_set1_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu1", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -346,6 +398,12 @@ namespace MENUSELECT
 
         private void Image_set2_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu2", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -357,6 +415,12 @@ namespace MENUSELECT
 
         private void Image_set3_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu3", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -368,6 +432,12 @@ namespace MENUSELECT
 
         private void Image_set4_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu4", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -379,6 +449,12 @@ namespace MENUSELECT
 
         private void Image_set5_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu5", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -389,6 +465,12 @@ namespace MENUSELECT
 
         private void Image_set6_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu6", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -399,6 +481,12 @@ namespace MENUSELECT
 
         private void Image_set7_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu7", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -409,6 +497,12 @@ namespace MENUSELECT
 
         private void Image_set8_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu8", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -419,6 +513,12 @@ namespace MENUSELECT
 
         private void Image_set9_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu9", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -429,6 +529,12 @@ namespace MENUSELECT
 
         private void Image_set10_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu10", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -439,6 +545,12 @@ namespace MENUSELECT
 
         private void Image_set11_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu11", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -449,6 +561,12 @@ namespace MENUSELECT
 
         private void Image_set12_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu12", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -459,6 +577,12 @@ namespace MENUSELECT
 
         private void Image_set13_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu13", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -469,6 +593,12 @@ namespace MENUSELECT
 
         private void Image_set14_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu14", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -479,6 +609,12 @@ namespace MENUSELECT
 
         private void Image_set15_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu15", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -489,6 +625,12 @@ namespace MENUSELECT
 
         private void Image_set16_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu16", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -499,6 +641,12 @@ namespace MENUSELECT
 
         private void Image_set17_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu17", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -509,6 +657,12 @@ namespace MENUSELECT
 
         private void Image_set18_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu18", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -519,6 +673,12 @@ namespace MENUSELECT
 
         private void Image_set19_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu19", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -529,6 +689,12 @@ namespace MENUSELECT
 
         private void Image_set20_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu20", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -539,6 +705,12 @@ namespace MENUSELECT
 
         private void Image_set21_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu21", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -549,6 +721,12 @@ namespace MENUSELECT
 
         private void Image_set22_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu22", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -559,6 +737,12 @@ namespace MENUSELECT
 
         private void Image_set23_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu23", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -569,6 +753,12 @@ namespace MENUSELECT
 
         private void Image_set24_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu24", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -579,6 +769,12 @@ namespace MENUSELECT
 
         private void Image_set25_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu25", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -589,6 +785,12 @@ namespace MENUSELECT
 
         private void Image_set26_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu26", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -599,6 +801,12 @@ namespace MENUSELECT
 
         private void Image_set27_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu27", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -609,6 +817,12 @@ namespace MENUSELECT
 
         private void Image_set28_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu28", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -619,6 +833,12 @@ namespace MENUSELECT
 
         private void Image_set29_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu29", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -629,6 +849,12 @@ namespace MENUSELECT
 
         private void Image_set30_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu30", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -639,6 +865,12 @@ namespace MENUSELECT
 
         private void Image_set31_Click(object sender, EventArgs e)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             Point parentPoint = this.Location;
             SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu31", this);
             sidePickForm.StartPosition = FormStartPosition.Manual;
@@ -649,166 +881,172 @@ namespace MENUSELECT
 
         private void Image_side1_Click(object sender, EventArgs e)
         {
-            SetListviewData("갈릭김떡만", 3500);
+            SetListviewData(sender, "갈릭김떡만", 3500);
         }
 
         private void Image_side2_Click(object sender, EventArgs e)
         {
-            SetListviewData("고구마치즈팝콘볼", 4000);
+            SetListviewData(sender, "고구마치즈팝콘볼", 4000);
         }
 
         private void Image_side3_Click(object sender, EventArgs e)
         {
-            SetListviewData("공룡치킨", 3200);
+            SetListviewData(sender, "공룡치킨", 3200);
         }
 
         private void Image_side4_Click(object sender, EventArgs e)
         {
-            SetListviewData("달콤초코볼", 4000);
+            SetListviewData(sender, "달콤초코볼", 4000);
         }
 
         private void Image_side5_Click(object sender, EventArgs e)
         {
-            SetListviewData("달콤카라멜볼", 4000);
+            SetListviewData(sender, "달콤카라멜볼", 4000);
         }
 
         private void Image_side6_Click(object sender, EventArgs e)
         {
-            SetListviewData("도깨비치즈볼", 4000);
+            SetListviewData(sender, "도깨비치즈볼", 4000);
         }
 
         private void Image_side7_Click(object sender, EventArgs e)
         {
-            SetListviewData("랜치소스", 1000);
+            SetListviewData(sender, "랜치소스", 1000);
         }
 
         private void Image_side8_Click(object sender, EventArgs e)
         {
-            SetListviewData("맘스스낵볼세트", 4200);
+            SetListviewData(sender, "맘스스낵볼세트", 4200);
         }
 
         private void Image_side9_Click(object sender, EventArgs e)
         {
-            SetListviewData("맘스양념소스", 1000);
+            SetListviewData(sender, "맘스양념소스", 1000);
         }
 
         private void Image_side10_Click(object sender, EventArgs e)
         {
-            SetListviewData("매콤김떡만", 3500);
+            SetListviewData(sender, "매콤김떡만", 3500);
         }
 
         private void Image_side11_Click(object sender, EventArgs e)
         {
-            SetListviewData("바삭크림치즈볼", 4000);
+            SetListviewData(sender, "바삭크림치즈볼", 4000);
         }
 
         private void Image_side12_Click(object sender, EventArgs e)
         {
-            SetListviewData("베이컨에그랩", 4500);
+            SetListviewData(sender, "베이컨에그랩", 4500);
         }
 
         private void Image_side13_Click(object sender, EventArgs e)
         {
-            SetListviewData("어니언치즈감자", 3200);
+            SetListviewData(sender, "어니언치즈감자", 3200);
         }
 
         private void Image_side14_Click(object sender, EventArgs e)
         {
-            SetListviewData("에그랩", 4000);
+            SetListviewData(sender, "에그랩", 4000);
         }
 
         private void Image_side15_Click(object sender, EventArgs e)
         {
-            SetListviewData("치즈감자", 2800);
+            SetListviewData(sender, "치즈감자", 2800);
         }
 
         private void Image_side16_Click(object sender, EventArgs e)
         {
-            SetListviewData("치즈스틱(2조각)", 2000);
+            SetListviewData(sender, "치즈스틱(2조각)", 2000);
         }
 
         private void Image_side17_Click(object sender, EventArgs e)
         {
-            SetListviewData("치킨무", 500);
+            SetListviewData(sender, "치킨무", 500);
         }
 
         private void Image_side18_Click(object sender, EventArgs e)
         {
-            SetListviewData("케이준양념감자", 3500);
+            SetListviewData(sender, "케이준양념감자", 3500);
         }
 
         private void Image_side19_Click(object sender, EventArgs e)
         {
-            SetListviewData("코울슬로", 1800);
+            SetListviewData(sender, "코울슬로", 1800);
         }
 
         private void Image_side20_Click(object sender, EventArgs e)
         {
-            SetListviewData("콘샐러드", 1800);
+            SetListviewData(sender, "콘샐러드", 1800);
         }
 
         private void Image_side21_Click(object sender, EventArgs e)
         {
-            SetListviewData("팝콘볼", 3500);
+            SetListviewData(sender, "팝콘볼", 3500);
         }
 
         private void Image_side22_Click(object sender, EventArgs e)
         {
-            SetListviewData("할라피뇨너겟", 4500);
+            SetListviewData(sender, "할라피뇨너겟", 4500);
         }
 
         private void Image_side23_Click(object sender, EventArgs e)
         {
-            SetListviewData("휠랩", 4000);
+            SetListviewData(sender, "휠랩", 4000);
         }
 
         private void Image_drink1_Click(object sender, EventArgs e)
         {
-            SetListviewData("레몬에이드", 2200);
+            SetListviewData(sender, "레몬에이드", 2200);
         }
 
         private void Image_drink2_Click(object sender, EventArgs e)
         {
-            SetListviewData("마운틴듀", 1600);
+            SetListviewData(sender, "마운틴듀", 1600);
         }
 
         private void Image_drink3_Click(object sender, EventArgs e)
         {
-            SetListviewData("미린다", 1600);
+            SetListviewData(sender, "미린다", 1600);
         }
 
         private void Image_drink4_Click(object sender, EventArgs e)
         {
-            SetListviewData("사이다", 1600);
+            SetListviewData(sender, "사이다", 1600);
         }
 
         private void Image_drink5_Click(object sender, EventArgs e)
         {
-            SetListviewData("아메리카노(HOT)", 1500);
+            SetListviewData(sender, "아메리카노(HOT)", 1500);
         }
 
         private void Image_drink6_Click(object sender, EventArgs e)
         {
-            SetListviewData("아메리카노(ICE)", 2000);
+            SetListviewData(sender, "아메리카노(ICE)", 2000);
         }
 
         private void Image_drink7_Click(object sender, EventArgs e)
         {
-            SetListviewData("오렌지주스", 2000);
+            SetListviewData(sender, "오렌지주스", 2000);
         }
 
         private void Image_drink8_Click(object sender, EventArgs e)
         {
-            SetListviewData("청포도에이드", 2200);
+            SetListviewData(sender, "청포도에이드", 2200);
         }
 
         private void Image_drink9_Click(object sender, EventArgs e)
         {
-            SetListviewData("콜라", 1600);
+            SetListviewData(sender, "콜라", 1600);
         }
 
-        private void SetListviewData(string menuName, int price)
+        private void SetListviewData(object sender, string menuName, int price)
         {
+            PictureBox box = (PictureBox)sender;
+            if (Convert.ToBoolean(box.Tag) == true)
+            {
+                return;
+            }
+
             int numOfItem = orderView.Items.Count;
 
             for (int i = 0; i < numOfItem; i++)
@@ -859,7 +1097,12 @@ namespace MENUSELECT
 
         private void momsLogoImage_DoubleClick(object sender, EventArgs e)
         {
-            //show admin page
+            Point parentPoint = this.Location;
+            Admin.AdminPage admin = new Admin.AdminPage();
+            admin.StartPosition = FormStartPosition.Manual;
+            admin.Location = new Point(parentPoint.X + 100, parentPoint.Y + 100);
+            admin.ShowDialog();
+            Form1_Load(sender, e);
         }
 
         private void Update_tb_PayPrice()

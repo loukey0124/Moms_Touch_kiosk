@@ -255,7 +255,7 @@
             // 
             this.btn_cancle.BackColor = System.Drawing.Color.Silver;
             this.btn_cancle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_cancle.Location = new System.Drawing.Point(20, 638);
+            this.btn_cancle.Location = new System.Drawing.Point(20, 619);
             this.btn_cancle.Name = "btn_cancle";
             this.btn_cancle.Size = new System.Drawing.Size(150, 100);
             this.btn_cancle.TabIndex = 37;
@@ -267,7 +267,7 @@
             // 
             this.btn_OK.BackColor = System.Drawing.Color.Tomato;
             this.btn_OK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_OK.Location = new System.Drawing.Point(460, 638);
+            this.btn_OK.Location = new System.Drawing.Point(460, 619);
             this.btn_OK.Name = "btn_OK";
             this.btn_OK.Size = new System.Drawing.Size(150, 100);
             this.btn_OK.TabIndex = 38;
@@ -282,6 +282,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(634, 761);
+            this.ControlBox = false;
             this.Controls.Add(this.btn_OK);
             this.Controls.Add(this.btn_cancle);
             this.Controls.Add(this.checkimage1);
@@ -305,6 +306,7 @@
             this.Controls.Add(this.tb_quantity);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
