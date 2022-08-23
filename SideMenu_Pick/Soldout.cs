@@ -2,11 +2,11 @@
 {
     public partial class Soldout : Form
     {
-        private MENU.Menu[] bugerData = DB.DataBase.GetMenuByType("buger");
-        private MENU.Menu[] chickenData = DB.DataBase.GetMenuByType("chicken");
-        private MENU.Menu[] setData = DB.DataBase.GetMenuByType("setmenu");
-        private MENU.Menu[] sideData = DB.DataBase.GetMenuByType("side");
-        private MENU.Menu[] drinkData = DB.DataBase.GetMenuByType("drink");
+        private MENU.Menu[] bugerData = DB.DataBase.GetMenuByType("buger").OrderByDescending(ob => ob.dataNum).ToArray();
+        private MENU.Menu[] chickenData = DB.DataBase.GetMenuByType("chicken").OrderByDescending(ob => ob.dataNum).ToArray();
+        private MENU.Menu[] setData = DB.DataBase.GetMenuByType("setmenu").OrderByDescending(ob => ob.dataNum).ToArray();
+        private MENU.Menu[] sideData = DB.DataBase.GetMenuByType("side").OrderByDescending(ob => ob.dataNum).ToArray();
+        private MENU.Menu[] drinkData = DB.DataBase.GetMenuByType("drink").OrderByDescending(ob => ob.dataNum).ToArray();
 
         public Soldout()
         {
@@ -136,91 +136,5 @@
                     break;
             }
         }
-
-        /* 미완성*/
-        //private void btnCheckApply_Click(object sender, EventArgs e)
-        //{
-
-        //    var strTemp = "";
-
-        //    foreach (var item in clbMenu1.CheckedItems)
-        //    {
-        //        strTemp += item.ToString() + " ";
-        //    }
-
-        //    foreach (var item in clbMenu2.CheckedItems)
-        //    {
-        //        strTemp += item.ToString() + " ";
-        //    }
-
-        //    foreach (var item in clbMenu3.CheckedItems)
-        //    {
-        //        strTemp += item.ToString() + " ";
-        //    }
-
-        //    foreach (var item in clbMenu4.CheckedItems)
-        //    {
-        //        strTemp += item.ToString() + " ";
-        //    }
-
-        //    if (clbMenu1.SelectedIndex == -1 && clbMenu2.SelectedIndex == -1 && clbMenu3.SelectedIndex == -1 && clbMenu4.SelectedIndex == -1)
-        //    {
-        //        MessageBox.Show("품절처리 항목이 없습니다.");
-        //    }
-
-        //    else
-        //    {
-        //        MessageBox.Show($"{strTemp}항목이 품절처리 되었습니다.", "확인", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    }
-
-        //    AdminPage main = new AdminPage();
-        //    main.Show();
-        //    this.Hide();
-        //}
-
-        //private void clbMenu1_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void clbMenu4_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-
-        //    //SideMenu_Pick.Menu menulist = DataBase.GetMenuByType("Type");
-        //    //menulist.Load()
-        //}
-
-        //private void btnSoldOut_Load(object sender, EventArgs e)
-        //{
-        //    for (int i = 0; i < 24; i++)
-        //    {
-        //        Admin.Menu burgerMenu = Admin.DataBase.GetMenuByName("buger" + (i + 1).ToString());
-        //        clbMenu1.Items.Add(burgerMenu.name);
-        //    }
-
-        //    for (int i = 0; i < 21; i++)
-        //    {
-        //        Admin.Menu chickenMenu = Admin.DataBase.GetMenuByName("chicken" + (i + 1).ToString());
-        //        clbMenu2.Items.Add(chickenMenu.name);
-        //    }
-
-        //    for (int i = 0; i < 23; i++)
-        //    {
-        //        Admin.Menu sideMenu = Admin.DataBase.GetMenuByName("side" + (i + 1).ToString());
-        //        clbMenu3.Items.Add(sideMenu.name);
-        //    }
-
-
-        //    for (int i = 0; i < 9; i++)
-        //    {
-        //        Admin.Menu drinkMenu = Admin.DataBase.GetMenuByName("drink" + (i + 1).ToString());
-        //        clbMenu4.Items.Add(drinkMenu.name);
-        //    }
-        //}
-
-        //private void btnSoldOut_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    Application.Exit();
-        //}
     }
 }

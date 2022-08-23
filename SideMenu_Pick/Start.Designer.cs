@@ -41,7 +41,7 @@
             this.eventImage.Location = new System.Drawing.Point(0, 0);
             this.eventImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.eventImage.Name = "eventImage";
-            this.eventImage.Size = new System.Drawing.Size(829, 807);
+            this.eventImage.Size = new System.Drawing.Size(850, 850);
             this.eventImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.eventImage.TabIndex = 1;
             this.eventImage.TabStop = false;
@@ -51,10 +51,10 @@
             this.btn_Pack.BackColor = System.Drawing.Color.Tomato;
             this.btn_Pack.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Pack.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Pack.Location = new System.Drawing.Point(15, 820);
+            this.btn_Pack.Location = new System.Drawing.Point(20, 875);
             this.btn_Pack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Pack.Name = "btn_Pack";
-            this.btn_Pack.Size = new System.Drawing.Size(300, 135);
+            this.btn_Pack.Size = new System.Drawing.Size(250, 100);
             this.btn_Pack.TabIndex = 2;
             this.btn_Pack.Text = "포장";
             this.btn_Pack.UseVisualStyleBackColor = false;
@@ -65,10 +65,10 @@
             this.btn_Mart.BackColor = System.Drawing.Color.Tomato;
             this.btn_Mart.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Mart.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Mart.Location = new System.Drawing.Point(515, 820);
+            this.btn_Mart.Location = new System.Drawing.Point(580, 875);
             this.btn_Mart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Mart.Name = "btn_Mart";
-            this.btn_Mart.Size = new System.Drawing.Size(300, 135);
+            this.btn_Mart.Size = new System.Drawing.Size(250, 100);
             this.btn_Mart.TabIndex = 4;
             this.btn_Mart.Text = "매장";
             this.btn_Mart.UseVisualStyleBackColor = false;
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 965);
+            this.ClientSize = new System.Drawing.Size(850, 1000);
             this.Controls.Add(this.btn_Mart);
             this.Controls.Add(this.btn_Pack);
             this.Controls.Add(this.eventImage);
