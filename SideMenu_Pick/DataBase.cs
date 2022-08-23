@@ -18,7 +18,7 @@ namespace DB
                 try
                 {
                     connection.Open();
-                    string sqlcmd = string.Format($"SELECT * FROM menu where Name_index = '{name}'");
+                    string sqlcmd = string.Format($"SELECT * FROM menu where Name_kor = '{name}'");
                     MySqlCommand cmd = new MySqlCommand(sqlcmd, connection);
                     MySqlDataReader table = cmd.ExecuteReader();
 

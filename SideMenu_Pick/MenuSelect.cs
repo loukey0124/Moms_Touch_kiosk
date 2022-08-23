@@ -66,13 +66,16 @@ namespace MENUSELECT
                         picBox.Load(soldOutImage);
                         picBox.Tag = true;
                     }
-                    else
+                    else 
                     {
                         picBox.Load(data[j].image);
                         picBox.Tag = false;
                     }
+                    if (picBox == null)
+                        return;
+                    else
 
-                    picBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    picBox.SizeMode = PictureBoxSizeMode.Zoom;
                     picBox.Image.Tag = data[j].type;
                     picBox.Name = data[j].name;
                     picBox.Size = new Size(175, 175);
@@ -254,7 +257,7 @@ namespace MENUSELECT
                             break;
                     }
                     Point parentPoint = this.Location;
-                    SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick("setmenu1", this);
+                    SideMenu_Pick.SidePick sidePickForm = new SideMenu_Pick.SidePick(pic.Name, this);
                     sidePickForm.StartPosition = FormStartPosition.Manual;
                     sidePickForm.Location = new Point(parentPoint.X + 100, parentPoint.Y + 100);
                     sidePickForm.ShowDialog();

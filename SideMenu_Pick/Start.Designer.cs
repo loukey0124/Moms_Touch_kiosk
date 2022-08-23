@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.eventImage = new System.Windows.Forms.PictureBox();
-            this.btn_Pack = new System.Windows.Forms.Button();
-            this.btn_Mart = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnTakeout = new System.Windows.Forms.Button();
+            this.btnEatin = new System.Windows.Forms.Button();
+            this.timer_5Sec = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.eventImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,46 +46,46 @@
             this.eventImage.TabIndex = 1;
             this.eventImage.TabStop = false;
             // 
-            // btn_Pack
+            // btnTakeout
             // 
-            this.btn_Pack.BackColor = System.Drawing.Color.Tomato;
-            this.btn_Pack.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Pack.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Pack.Location = new System.Drawing.Point(20, 875);
-            this.btn_Pack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Pack.Name = "btn_Pack";
-            this.btn_Pack.Size = new System.Drawing.Size(250, 100);
-            this.btn_Pack.TabIndex = 2;
-            this.btn_Pack.Text = "포장";
-            this.btn_Pack.UseVisualStyleBackColor = false;
-            this.btn_Pack.Click += new System.EventHandler(this.btn_Pack_Click);
+            this.btnTakeout.BackColor = System.Drawing.Color.Tomato;
+            this.btnTakeout.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnTakeout.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnTakeout.Location = new System.Drawing.Point(20, 875);
+            this.btnTakeout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnTakeout.Name = "btnTakeout";
+            this.btnTakeout.Size = new System.Drawing.Size(250, 100);
+            this.btnTakeout.TabIndex = 2;
+            this.btnTakeout.Text = "포장";
+            this.btnTakeout.UseVisualStyleBackColor = false;
+            this.btnTakeout.Click += new System.EventHandler(this.ButtonClick);
             // 
-            // btn_Mart
+            // btnEatin
             // 
-            this.btn_Mart.BackColor = System.Drawing.Color.Tomato;
-            this.btn_Mart.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Mart.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Mart.Location = new System.Drawing.Point(580, 875);
-            this.btn_Mart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_Mart.Name = "btn_Mart";
-            this.btn_Mart.Size = new System.Drawing.Size(250, 100);
-            this.btn_Mart.TabIndex = 4;
-            this.btn_Mart.Text = "매장";
-            this.btn_Mart.UseVisualStyleBackColor = false;
-            this.btn_Mart.Click += new System.EventHandler(this.btn_Mart_Click);
+            this.btnEatin.BackColor = System.Drawing.Color.Tomato;
+            this.btnEatin.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEatin.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEatin.Location = new System.Drawing.Point(580, 875);
+            this.btnEatin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEatin.Name = "btnEatin";
+            this.btnEatin.Size = new System.Drawing.Size(250, 100);
+            this.btnEatin.TabIndex = 4;
+            this.btnEatin.Text = "매장";
+            this.btnEatin.UseVisualStyleBackColor = false;
+            this.btnEatin.Click += new System.EventHandler(this.ButtonClick);
             // 
-            // timer1
+            // timer_5Sec
             // 
-            this.timer1.Interval = 5000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer_5Sec.Interval = 5000;
+            this.timer_5Sec.Tick += new System.EventHandler(this.timer_5Sec_Tick);
             // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 1000);
-            this.Controls.Add(this.btn_Mart);
-            this.Controls.Add(this.btn_Pack);
+            this.Controls.Add(this.btnEatin);
+            this.Controls.Add(this.btnTakeout);
             this.Controls.Add(this.eventImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -100,8 +100,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox eventImage;
-        private System.Windows.Forms.Button btn_Pack;
-        private System.Windows.Forms.Button btn_Mart;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnTakeout;
+        private System.Windows.Forms.Button btnEatin;
+        private System.Windows.Forms.Timer timer_5Sec;
     }
 }

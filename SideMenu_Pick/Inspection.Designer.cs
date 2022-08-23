@@ -48,7 +48,7 @@
             this.l_inspection.AutoSize = true;
             this.l_inspection.Font = new System.Drawing.Font("맑은 고딕", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.l_inspection.ForeColor = System.Drawing.Color.White;
-            this.l_inspection.Location = new System.Drawing.Point(200, 500);
+            this.l_inspection.Location = new System.Drawing.Point(200, 450);
             this.l_inspection.Name = "l_inspection";
             this.l_inspection.Size = new System.Drawing.Size(438, 86);
             this.l_inspection.TabIndex = 1;
@@ -57,7 +57,7 @@
             // Inspection
             // 
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(843, 1004);
+            this.ClientSize = new System.Drawing.Size(850, 1000);
             this.Controls.Add(this.l_inspection);
             this.Controls.Add(this.btn_return);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

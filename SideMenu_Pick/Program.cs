@@ -1,3 +1,5 @@
+using START;
+
 namespace MAIN
 {
     internal static class Program
@@ -6,7 +8,7 @@ namespace MAIN
         ///  The main entry point for the application.
         /// </summary>
 
-        static public START.Start start = new START.Start();
+        static public Start start = new Start();
 
         [STAThread]
         static void Main()

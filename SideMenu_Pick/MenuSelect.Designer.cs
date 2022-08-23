@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuSelect_Form));
             this.momsLogoImage = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Tab_Buger = new System.Windows.Forms.TabPage();
             this.Tab_Chicken = new System.Windows.Forms.TabPage();
             this.Tab_Set = new System.Windows.Forms.TabPage();
             this.Tab_Side = new System.Windows.Forms.TabPage();
@@ -45,7 +46,6 @@
             this.Label_totalPrice = new System.Windows.Forms.Label();
             this.btn_plus = new System.Windows.Forms.Button();
             this.btn_minus = new System.Windows.Forms.Button();
-            this.Tab_Buger = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.momsLogoImage)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -53,10 +53,10 @@
             // momsLogoImage
             // 
             this.momsLogoImage.Image = ((System.Drawing.Image)(resources.GetObject("momsLogoImage.Image")));
-            this.momsLogoImage.Location = new System.Drawing.Point(12, 15);
+            this.momsLogoImage.Location = new System.Drawing.Point(20, 15);
             this.momsLogoImage.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.momsLogoImage.Name = "momsLogoImage";
-            this.momsLogoImage.Size = new System.Drawing.Size(170, 69);
+            this.momsLogoImage.Size = new System.Drawing.Size(220, 80);
             this.momsLogoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.momsLogoImage.TabIndex = 0;
             this.momsLogoImage.TabStop = false;
@@ -72,13 +72,28 @@
             this.tabControl1.Font = new System.Drawing.Font("돋움", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabControl1.HotTrack = true;
             this.tabControl1.ItemSize = new System.Drawing.Size(160, 50);
-            this.tabControl1.Location = new System.Drawing.Point(10, 110);
+            this.tabControl1.Location = new System.Drawing.Point(20, 110);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(810, 640);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 1;
+            // 
+            // Tab_Buger
+            // 
+            this.Tab_Buger.AutoScroll = true;
+            this.Tab_Buger.AutoScrollMargin = new System.Drawing.Size(0, 50);
+            this.Tab_Buger.BackColor = System.Drawing.Color.White;
+            this.Tab_Buger.Font = new System.Drawing.Font("돋움", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Tab_Buger.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Tab_Buger.Location = new System.Drawing.Point(4, 54);
+            this.Tab_Buger.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Tab_Buger.Name = "Tab_Buger";
+            this.Tab_Buger.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Tab_Buger.Size = new System.Drawing.Size(802, 582);
+            this.Tab_Buger.TabIndex = 0;
+            this.Tab_Buger.Text = "버거";
             // 
             // Tab_Chicken
             // 
@@ -135,7 +150,7 @@
             // 
             // btn_Back
             // 
-            this.btn_Back.Location = new System.Drawing.Point(662, 26);
+            this.btn_Back.Location = new System.Drawing.Point(680, 30);
             this.btn_Back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(140, 58);
@@ -186,7 +201,7 @@
             // order_name
             // 
             this.order_name.Text = "상품명";
-            this.order_name.Width = 450;
+            this.order_name.Width = 440;
             // 
             // order_number
             // 
@@ -228,27 +243,12 @@
             this.btn_minus.UseVisualStyleBackColor = true;
             this.btn_minus.Click += new System.EventHandler(this.btn_minus_Click);
             // 
-            // Tab_Buger
-            // 
-            this.Tab_Buger.AutoScroll = true;
-            this.Tab_Buger.AutoScrollMargin = new System.Drawing.Size(0, 50);
-            this.Tab_Buger.BackColor = System.Drawing.Color.White;
-            this.Tab_Buger.Font = new System.Drawing.Font("돋움", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Tab_Buger.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Tab_Buger.Location = new System.Drawing.Point(4, 54);
-            this.Tab_Buger.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Tab_Buger.Name = "Tab_Buger";
-            this.Tab_Buger.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Tab_Buger.Size = new System.Drawing.Size(802, 582);
-            this.Tab_Buger.TabIndex = 0;
-            this.Tab_Buger.Text = "버거";
-            // 
             // MenuSelect_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(827, 965);
+            this.ClientSize = new System.Drawing.Size(850, 1000);
             this.Controls.Add(this.btn_minus);
             this.Controls.Add(this.btn_plus);
             this.Controls.Add(this.Label_totalPrice);
